@@ -4,10 +4,12 @@ namespace Liskov
 {
     public abstract class Vehiculo
     {
+        // Propiedades Comunes
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public int VelocidadMaxima { get; set; }
 
+        // Constructor de la Clase
         public Vehiculo(string marca, string modelo, int velocidadMaxima)
         {
             Marca = marca;
@@ -15,8 +17,10 @@ namespace Liskov
             VelocidadMaxima = velocidadMaxima;
         }
 
+        // Metodo Abstracto
         public abstract void Conducir();
 
+        // Metodo Comun
         public void MostrarDetalles()
         {
             Console.WriteLine($"Marca { Marca }, Modelo {Modelo}, Velocidad Maxima { VelocidadMaxima }");
@@ -25,10 +29,12 @@ namespace Liskov
 
     class Coche : Vehiculo
     {
+        // Constructor de la Clase
         public Coche(string marca, string modelo, int velocidadMaxima) : base(marca, modelo, velocidadMaxima)
         {
         }
 
+        // Implementacion del Metodo Abstracto
         public override void Conducir()
         {
             Console.WriteLine($"El Coche { Modelo } esta llendo a una Velocidad de: { VelocidadMaxima }");
@@ -61,7 +67,7 @@ namespace Liskov
         }
     }
 
-    class Program
+    class MostrarInformacion
     {
         static void Main(string[] args)
         {
